@@ -5,34 +5,35 @@
   <div>
 
     <div class="form-group row">
-      <label class="col-2 col-form-label">Nombre</label>
+      <label class="col-2 col-form-label">Matricula</label>
       <div class="col-8">
 
         <input class="form-control"
                type="text"
-               placeholder="Nombre">
+               value="{{matricula}}"
+               >
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-2 col-form-label">Apellido</label>
+      <label class="col-2 col-form-label">Marca</label>
       <div class="col-8">
 
         <input class="form-control"
                type="text"
-               placeholder="Apellido">
+              >
       </div>
     </div>
 
   </div>
 
   <div class="form-group row">
-    <label class="col-2 col-form-label">Correo</label>
+    <label class="col-2 col-form-label">Cilindraje</label>
     <div class="col-md-8">
 
       <input class="form-control"
-             type="email"
-             placeholder="Correo electrónico">
+             type="number"
+             >
     </div>
   </div>
 
@@ -48,3 +49,12 @@
   </div>
 
 </form>
+
+
+<p *ngFor="let vehiculo of vehiculos">
+
+{{vehiculos.idvehiculo.marca}}
+
+
+
+</p>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {VehiculosService} from '../service/vehiculos.service';
 
 @Component({
   selector: 'app-consulta',
@@ -7,7 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaComponent implements OnInit {
 
-  constructor() { }
+ vehiculos:any[]=[];
+
+
+
+  constructor(private _vehiculosServicios:VehiculosService) {
+
+  _vehiculosServicios.ObtenerVehiculos().subscribe(datos=>{
+      this.vehiculos=datos;
+
+
+
+
+
+
+  });
+
+
+   }
+
+
 
   ngOnInit() {
   }

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {APP_ROUTING} from './app.routes';
 import {VehiculosService} from './service/vehiculos.service';
+import {HttpModule} from '@angular/http';
+
 
 import { AppComponent } from './app.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
@@ -18,6 +20,7 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     APP_ROUTING
   ],
