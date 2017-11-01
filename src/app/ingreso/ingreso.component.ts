@@ -8,34 +8,52 @@ import {VehiculosService} from '../service/vehiculos.service';
 })
 export class IngresoComponent implements OnInit {
 
-nombre:string = "David";
-marca:string ;
+  vehiculo={
+    "vehiculo":{
 
- vehiculos:any[]=[];
+
+
+    matricula: "LDF903",
+    cilindraje: "200",
+    marca: "yamaha"
+
+      },
+
+    "slot":{
+      tipoespacio:"moto"
+
+    }
+
+
+
+  };
+
+
+  vehiculos=[];
+  respuesta=[];
+
   constructor(private _vehiculosServicios:VehiculosService) {
 
-  _vehiculosServicios.ObtenerVehiculos().subscribe(datos=>{
-      this.vehiculos=datos;
-    console.log(datos);
-
-    var[slot] = this.vehiculos;
-    var {idvehiculo,cilindraje,marca,matricula,fechaentrada} =slot.idvehiculo;
-
-this.marca = slot.idvehiculo.marca;
+  // _vehiculosServicios.GuardarVehiculos(this.vehiculo).subscribe(res=>{
+  // this.respuesta =res.json();
 
 
 
-   console.log(slot);
-  console.log(marca,cilindraje);
-  console.log(this.vehiculos);
-
-
-  });
-
+    //  })
 
    }
 
+   guardar(){
+    
+   this._vehiculosServicios.GuardarVehiculos(this.vehiculo).subscribe(res=>{
+     this.respuesta =res.json();
+   });
+
+ }
+
   ngOnInit() {
   }
+
+
 
 }

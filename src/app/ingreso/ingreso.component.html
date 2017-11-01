@@ -1,4 +1,4 @@
-<h4>Formularios <small>template</small></h4>
+<h4>Datos Vehiculo </h4>
 <hr>
 <form>
 
@@ -10,7 +10,7 @@
 
         <input class="form-control"
                type="text"
-               value="{{matricula}}"
+
                >
       </div>
     </div>
@@ -38,23 +38,35 @@
   </div>
 
 
+  <fieldset class="form-group">
+   <div class="row">
+     <legend class="col-form-legend col-sm-2">Tipo Vehiculo</legend>
+     <div class="col-sm-10 radiob">
+       <div class="form-check form-check-inline">
+         <label class="form-check-label">
+           <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+           Carro
+         </label>
+       </div>
+       <div class="form-check form-check-inline">
+         <label class="form-check-label">
+           <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          Moto
+         </label>
+       </div>
+
+     </div>
+   </div>
+ </fieldset>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button type="button" class="btn btn-outline-primary"
+    (click)="guardar()">
         Guardar
       </button>
     </div>
   </div>
 
 </form>
-
-
-<p *ngFor="let vehiculo of vehiculos">
-
-{{vehiculos.idvehiculo.marca}}
-
-
-
-</p>

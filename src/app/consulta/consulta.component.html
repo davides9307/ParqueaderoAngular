@@ -1,7 +1,30 @@
-<p *ngFor="let vehiculo of vehiculos">
-
-{{vehiculos.idvehiculo.marca}}
 
 
 
-</p>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Slot</th>
+      <th scope="col">Matricula</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Cilindraje</th>
+      <th scope="col">Fecha Entrada</th>
+      <th scope="col">Tipo Vehiculo</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehiculo of vehiculos; let i = index">
+      <th scope="row">{{vehiculo.idslot}}</th>
+      <td>{{vehiculo.idvehiculo.matricula}}</td>
+      <td>{{vehiculo.idvehiculo.marca}}</td>
+      <td>{{vehiculo.idvehiculo.cilindraje}}</td>
+      <td>  {{fechas[i]}}    </td>
+      <td>{{vehiculo.tipoespacio}} </td>
+
+    </tr>
+
+  </tbody>
+</table>
